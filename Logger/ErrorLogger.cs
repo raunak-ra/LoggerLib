@@ -17,9 +17,7 @@ namespace Logger
             data.Add(new KeyValuePair<string, object>("type", this.exception.GetType()));
             data.Add(new KeyValuePair<string, object>("stacktrace", this.exception.StackTrace));
             data.Add(new KeyValuePair<string, object>("inner_exception", this.exception.InnerException));
-
             return data;
-
         }
     }
 }
