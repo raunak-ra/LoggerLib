@@ -37,5 +37,21 @@ namespace Logger.Tests
             l.WriteLogAsync(log);
             Assert.Equal(7, log.GetData().Count);
         }
+
+        [Fact]
+        public void Testing_for_errorlogger()
+        {
+
+            var log = new ErrorLogger();
+            Exception ex = new NotImplementedException();
+            log.exception = ex;
+            log.ApplicationName = "apiName";
+            log.Method = "getvalue";
+            log.SessionId = "12ert345rgftfsb877";
+
+            l.WriteLogAsync(log);
+            Assert.Equal(9, log.GetData().Count);
+        }
+
     }
 }
