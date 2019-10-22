@@ -17,7 +17,7 @@ namespace Logger
             data.Add(new KeyValuePair<string, object>("type", this.Type));
             data.Add(new KeyValuePair<string, object>("message", this.Message));
             data.Add(new KeyValuePair<string, object>("status", this.Status));
-            data.Add(new KeyValuePair<string, object>("time_elapsed", this.TimeElapsedInMilliSeconds));
+            data.Add(new KeyValuePair<string, object>("time_elapsed_in_millisecond", this.TimeElapsedInMilliSeconds));
             return data;
         }
     }
