@@ -10,6 +10,8 @@ namespace Logger
         public abstract string Type { get; }
         public string ApplicationName { get; set; }
         public string Method { get; set; }
+
+        public List<KeyValuePair<string, object>> keyValuePair = new List<KeyValuePair<string, object>>();
         public virtual List<KeyValuePair<string, object>> GetData()
         {
             var data = new List<KeyValuePair<string, object>>
@@ -19,6 +21,13 @@ namespace Logger
                 new KeyValuePair<string, object>("application_name", this.ApplicationName),
                 new KeyValuePair<string, object>("method", this.Method)
             };
+            if (keyValuePair.Count != 0)
+            {
+                foreach (var pair in keyValuePair)
+                {
+                    data.Add(pair);
+                }
+            }
             return data;
         }
     }
