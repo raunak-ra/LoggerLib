@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logger
 {
-    public class TraceLogger : LogBase
+    public class TraceLog : LogBase
     {
         public override string Type { get => "trace"; }
         public string Message { get; set; }

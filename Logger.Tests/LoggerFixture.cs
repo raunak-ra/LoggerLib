@@ -13,7 +13,7 @@ namespace Logger.Tests
         [Fact]
         public void Testing_for_apilogger()
         {
-            var log = new ApiLogger();
+            var log = new ApiLog();
             log.ApplicationName = "apiName";
             log.Method = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
@@ -25,7 +25,7 @@ namespace Logger.Tests
         public void Testing_for_extradata()
         {
 
-            var log = new ApiLogger();
+            var log = new ApiLog();
             PropA = "propertyA";
             PropB = "propertyB";
             log.ApplicationName = "apiName";
@@ -42,7 +42,7 @@ namespace Logger.Tests
         public void Testing_for_errorlogger()
         {
 
-            var log = new ErrorLogger();
+            var log = new ErrorLog();
             Exception ex = new NotImplementedException();
             log.exception = ex;
             log.ApplicationName = "apiName";
@@ -57,7 +57,7 @@ namespace Logger.Tests
         public void Testing_for_tracelogger()
         {
 
-            var log = new TraceLogger();
+            var log = new TraceLog();
             log.ApplicationName = "apiName";
             log.Method = "getvalue";
             log.SessionId = "12ert345rgftfsb877";

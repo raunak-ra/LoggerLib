@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logger
 {
-    public class ApiLogger : LogBase
+    public class ApiLog : LogBase
     {
         public override string Type { get => "api"; }
 

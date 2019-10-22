@@ -29,7 +29,7 @@ namespace Logger
         {
             var data = logger.GetData();
 
-            if (logger is ErrorLogger)
+            if (logger is ErrorLog)
             {
                 Log.Error("{@data}", data);
             }
