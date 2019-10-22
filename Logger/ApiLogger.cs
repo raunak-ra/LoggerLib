@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logger
 {
-    public class ApiLog : LogBase
+    public class ApiLogger : LogBase
     {
         public override string Type { get => "api"; }
         public override List<KeyValuePair<string, object>> GetData()
