@@ -53,5 +53,19 @@ namespace Logger.Tests
             Assert.Equal(9, log.GetData().Count);
         }
 
+        [Fact]
+        public void Testing_for_tracelogger()
+        {
+
+            var log = new TraceLogger();
+            log.ApplicationName = "apiName";
+            log.Method = "getvalue";
+            log.SessionId = "12ert345rgftfsb877";
+            log.Message = "calling sorting method";
+            log.Method = "method A";
+            log.TimeElapsedInMilliSeconds = "12ms";
+            l.WriteLogAsync(log);
+            Assert.Equal(8, log.GetData().Count);
+        }
     }
 }
