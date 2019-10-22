@@ -14,7 +14,7 @@ namespace Logger
             var data = base.GetData();
             data.Add(new KeyValuePair<string, object>("type", this.Type));
             data.Add(new KeyValuePair<string, object>("message", this.exception.Message));
-            data.Add(new KeyValuePair<string, object>("type", this.exception.GetType()));
+            data.Add(new KeyValuePair<string, object>("exception_type", this.exception.GetType().Name));
             data.Add(new KeyValuePair<string, object>("stacktrace", this.exception.StackTrace));
             data.Add(new KeyValuePair<string, object>("inner_exception", this.exception.InnerException));
             return data;
