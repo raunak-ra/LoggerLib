@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Logger.Tests
@@ -18,6 +19,23 @@ namespace Logger.Tests
             log.SessionId = "12ert345rgftfsb877";
             l.WriteLogAsync(log);
             Assert.Equal(5, log.GetData().Count);
+        }
+
+        [Fact]
+        public void Testing_for_extradata()
+        {
+
+            var log = new ApiLogger();
+            PropA = "propertyA";
+            PropB = "propertyB";
+            log.ApplicationName = "apiName";
+            log.Method = "getvalue";
+            log.SessionId = "12ert345rgftfsb877";
+
+            log.keyValuePair.Add(new KeyValuePair<string, object>("prop_a", this.PropA));
+            log.keyValuePair.Add(new KeyValuePair<string, object>("prop_b", this.PropB));
+            l.WriteLogAsync(log);
+            Assert.Equal(7, log.GetData().Count);
         }
     }
 }
