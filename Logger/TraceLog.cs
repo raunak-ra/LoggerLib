@@ -14,7 +14,6 @@ namespace Logger
         public override List<KeyValuePair<string, object>> GetLogData()
         {
             var logData = base.GetLogData();
-            logData.Add(new KeyValuePair<string, object>("type", this.Type));
             logData.Add(new KeyValuePair<string, object>("message", this.Message));
             logData.Add(new KeyValuePair<string, object>("status", this.Status));
             logData.Add(new KeyValuePair<string, object>("time_elapsed_in_millisecond", this.TimeElapsedInMilliSeconds));

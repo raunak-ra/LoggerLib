@@ -13,7 +13,6 @@ namespace Logger
         public override List<KeyValuePair<string, object>> GetLogData()
         {
             var logData = base.GetLogData();
-            logData.Add(new KeyValuePair<string, object>("type", this.Type));
             logData.Add(new KeyValuePair<string, object>("request", this.Request));
             logData.Add(new KeyValuePair<string, object>("response", this.Response));
             logData.Add(new KeyValuePair<string, object>("status", this.Status));

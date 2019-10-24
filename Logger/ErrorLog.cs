@@ -12,7 +12,6 @@ namespace Logger
         public override List<KeyValuePair<string, object>> GetLogData()
         {
             var logData = base.GetLogData();
-            logData.Add(new KeyValuePair<string, object>("type", this.Type));
             logData.Add(new KeyValuePair<string, object>("message", this.exception.Message));
             logData.Add(new KeyValuePair<string, object>("exception_type", this.exception.GetType().Name));
             logData.Add(new KeyValuePair<string, object>("stacktrace", this.exception.StackTrace));
