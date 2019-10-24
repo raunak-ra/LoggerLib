@@ -11,7 +11,7 @@ namespace Logger.Tests
         public string PropertyB { get; set; }
 
         [Fact]
-        public void Logger_Should_Be_Write_ApiLog_In_File()
+        public void Logger_Should_Be_Write_Api_Logs_In_File()
         {
             var log = new ApiLog();
             log.ApplicationName = "apiName";
@@ -39,7 +39,7 @@ namespace Logger.Tests
         }
 
         [Fact]
-        public void Logger_Should_Be_Write_Log_ErrorLogs_In_File()
+        public void Logger_Should_Be_Write_Error_Logs_In_File()
         {
 
             var log = new ErrorLog();
@@ -54,7 +54,7 @@ namespace Logger.Tests
         }
 
         [Fact]
-        public void Logger_Should_Be_Write_Log_TraceLogs_In_File()
+        public void Logger_Should_Be_Write_Trace_Logs_In_File()
         {
 
             var log = new TraceLog();
