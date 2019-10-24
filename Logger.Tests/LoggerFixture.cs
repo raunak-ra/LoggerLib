@@ -7,8 +7,8 @@ namespace Logger.Tests
     public class LoggerFixture
     {
         private readonly ITxsLogger logger = new TxsLogger();
-        public string PropA { get; set; }
-        public string PropB { get; set; }
+        public string PropertyA { get; set; }
+        public string PropertyB { get; set; }
 
         [Fact]
         public void Testing_for_apilogger()
@@ -26,14 +26,14 @@ namespace Logger.Tests
         {
 
             var log = new ApiLog();
-            PropA = "propertyA";
-            PropB = "propertyB";
+            PropertyA = "propertyA";
+            PropertyB = "propertyB";
             log.ApplicationName = "apiName";
             log.Method = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
 
-            log.keyValuePair.Add(new KeyValuePair<string, object>("prop_a", this.PropA));
-            log.keyValuePair.Add(new KeyValuePair<string, object>("prop_b", this.PropB));
+            log.keyValuePair.Add(new KeyValuePair<string, object>("prop_a", this.PropertyA));
+            log.keyValuePair.Add(new KeyValuePair<string, object>("prop_b", this.PropertyB));
             logger.WriteLogAsync(log);
             Assert.Equal(7, log.GetData().Count);
         }
