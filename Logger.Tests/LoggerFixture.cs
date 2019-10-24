@@ -44,7 +44,7 @@ namespace Logger.Tests
         public void Logger_Should_Write_Error_Logs_In_File()
         {
 
-            var log = new ErrorLog();
+            var log = new ExceptionLog();
             Exception ex = new NotImplementedException();
             log.exception = ex;
             log.ApplicationName = "apiName";

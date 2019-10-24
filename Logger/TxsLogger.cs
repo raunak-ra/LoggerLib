@@ -27,7 +27,7 @@ namespace Logger
         {
             var logData = logger.GetLogData();
 
-            if (logger is ErrorLog)
+            if (logger is ExceptionLog)
             {
                 Log.Error("{@data}", logData);
             }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logger
 {
-    public class ErrorLog : LogBase
+    public class ExceptionLog : LogBase
     {
 
         public Exception exception { get; set; }
