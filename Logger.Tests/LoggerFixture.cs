@@ -18,11 +18,11 @@ namespace Logger.Tests
             log.Method = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
             logger.WriteLogAsync(log);
-            Assert.Equal(5, log.GetData().Count);
+            Assert.Equal(8, log.GetData().Count);
         }
 
         [Fact]
-        public void Logger_Should_Be_Write_Log_Additional_Logs_In_File()
+        public void Logger_Should_Be_Write_Additional_Logs_In_File()
         {
 
             var log = new ApiLog();
@@ -35,7 +35,7 @@ namespace Logger.Tests
             log.keyValuePair.Add(new KeyValuePair<string, object>("property_a", this.PropertyA));
             log.keyValuePair.Add(new KeyValuePair<string, object>("property_b", this.PropertyB));
             logger.WriteLogAsync(log);
-            Assert.Equal(7, log.GetData().Count);
+            Assert.Equal(10, log.GetData().Count);
         }
 
         [Fact]
