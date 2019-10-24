@@ -13,10 +13,10 @@ namespace Logger.Tests
         {
             var log = new ApiLog();
             log.ApplicationName = "apiName";
-            log.Method = "getvalue";
+            log.MethodName = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
             logger.WriteLogAsync(log);
-            Assert.Equal(8, log.GetLogData().Count);
+            Assert.Equal(7, log.GetLogData().Count);
         }
 
         // just for testing purposes 
@@ -31,13 +31,13 @@ namespace Logger.Tests
             PropertyA = "propertyA";
             PropertyB = "propertyB";
             log.ApplicationName = "apiName";
-            log.Method = "getvalue";
+            log.MethodName = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
 
             log.keyValuePair.Add(new KeyValuePair<string, object>("property_a", this.PropertyA));
             log.keyValuePair.Add(new KeyValuePair<string, object>("property_b", this.PropertyB));
             logger.WriteLogAsync(log);
-            Assert.Equal(10, log.GetLogData().Count);
+            Assert.Equal(9, log.GetLogData().Count);
         }
 
         [Fact]
@@ -48,11 +48,11 @@ namespace Logger.Tests
             Exception ex = new NotImplementedException();
             log.exception = ex;
             log.ApplicationName = "apiName";
-            log.Method = "getvalue";
+            log.MethodName = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
 
             logger.WriteLogAsync(log);
-            Assert.Equal(9, log.GetLogData().Count);
+            Assert.Equal(8, log.GetLogData().Count);
         }
 
         [Fact]
@@ -61,13 +61,13 @@ namespace Logger.Tests
 
             var log = new TraceLog();
             log.ApplicationName = "apiName";
-            log.Method = "getvalue";
+            log.MethodName = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
             log.Message = "calling sorting method";
-            log.Method = "method A";
+            log.Status = "OK";
             log.TimeElapsedInMilliSeconds = "12ms";
             logger.WriteLogAsync(log);
-            Assert.Equal(8, log.GetLogData().Count);
+            Assert.Equal(7, log.GetLogData().Count);
         }
     }
 }
