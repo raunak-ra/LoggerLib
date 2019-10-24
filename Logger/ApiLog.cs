@@ -11,14 +11,14 @@ namespace Logger
         public string Request { get; set; }
         public string Response { get; set; }
         public string Status { get; set; }
-        public override List<KeyValuePair<string, object>> GetData()
+        public override List<KeyValuePair<string, object>> GetLogData()
         {
-            var data = base.GetData();
-            data.Add(new KeyValuePair<string, object>("type", this.Type));
-            data.Add(new KeyValuePair<string, object>("request", this.Request));
-            data.Add(new KeyValuePair<string, object>("response", this.Response));
-            data.Add(new KeyValuePair<string, object>("status", this.Status));
-            return data;
+            var logData = base.GetLogData();
+            logData.Add(new KeyValuePair<string, object>("type", this.Type));
+            logData.Add(new KeyValuePair<string, object>("request", this.Request));
+            logData.Add(new KeyValuePair<string, object>("response", this.Response));
+            logData.Add(new KeyValuePair<string, object>("status", this.Status));
+            return logData;
         }
     }
 }

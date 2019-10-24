@@ -9,15 +9,15 @@ namespace Logger
 
         public Exception exception { get; set; }
         public override string Type { get => "error"; }
-        public override List<KeyValuePair<string, object>> GetData()
+        public override List<KeyValuePair<string, object>> GetLogData()
         {
-            var data = base.GetData();
-            data.Add(new KeyValuePair<string, object>("type", this.Type));
-            data.Add(new KeyValuePair<string, object>("message", this.exception.Message));
-            data.Add(new KeyValuePair<string, object>("exception_type", this.exception.GetType().Name));
-            data.Add(new KeyValuePair<string, object>("stacktrace", this.exception.StackTrace));
-            data.Add(new KeyValuePair<string, object>("inner_exception", this.exception.InnerException));
-            return data;
+            var logData = base.GetLogData();
+            logData.Add(new KeyValuePair<string, object>("type", this.Type));
+            logData.Add(new KeyValuePair<string, object>("message", this.exception.Message));
+            logData.Add(new KeyValuePair<string, object>("exception_type", this.exception.GetType().Name));
+            logData.Add(new KeyValuePair<string, object>("stacktrace", this.exception.StackTrace));
+            logData.Add(new KeyValuePair<string, object>("inner_exception", this.exception.InnerException));
+            return logData;
         }
     }
 }

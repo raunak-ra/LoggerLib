@@ -18,7 +18,7 @@ namespace Logger.Tests
             log.Method = "getvalue";
             log.SessionId = "12ert345rgftfsb877";
             logger.WriteLogAsync(log);
-            Assert.Equal(8, log.GetData().Count);
+            Assert.Equal(8, log.GetLogData().Count);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace Logger.Tests
             log.keyValuePair.Add(new KeyValuePair<string, object>("property_a", this.PropertyA));
             log.keyValuePair.Add(new KeyValuePair<string, object>("property_b", this.PropertyB));
             logger.WriteLogAsync(log);
-            Assert.Equal(10, log.GetData().Count);
+            Assert.Equal(10, log.GetLogData().Count);
         }
 
         [Fact]
@@ -50,7 +50,7 @@ namespace Logger.Tests
             log.SessionId = "12ert345rgftfsb877";
 
             logger.WriteLogAsync(log);
-            Assert.Equal(9, log.GetData().Count);
+            Assert.Equal(9, log.GetLogData().Count);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace Logger.Tests
             log.Method = "method A";
             log.TimeElapsedInMilliSeconds = "12ms";
             logger.WriteLogAsync(log);
-            Assert.Equal(8, log.GetData().Count);
+            Assert.Equal(8, log.GetLogData().Count);
         }
     }
 }

@@ -27,15 +27,15 @@ namespace Logger
 
         public async Task WriteLogAsync(LogBase logger)
         {
-            var data = logger.GetData();
+            var logData = logger.GetLogData();
 
             if (logger is ErrorLog)
             {
-                Log.Error("{@data}", data);
+                Log.Error("{@data}", logData);
             }
             else
             {
-                Log.Information("{@data}", data);
+                Log.Information("{@data}", logData);
             }
 
         }

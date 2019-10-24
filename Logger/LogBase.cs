@@ -12,9 +12,9 @@ namespace Logger
         public string Method { get; set; }
 
         public List<KeyValuePair<string, object>> keyValuePair = new List<KeyValuePair<string, object>>();
-        public virtual List<KeyValuePair<string, object>> GetData()
+        public virtual List<KeyValuePair<string, object>> GetLogData()
         {
-            var data = new List<KeyValuePair<string, object>>
+            var logData = new List<KeyValuePair<string, object>>
             {
                 new KeyValuePair<string, object>("session_id", this.SessionId),
                 new KeyValuePair<string, object>("type", this.Type),
@@ -25,10 +25,10 @@ namespace Logger
             {
                 foreach (var pair in keyValuePair)
                 {
-                    data.Add(pair);
+                    logData.Add(pair);
                 }
             }
-            return data;
+            return logData;
         }
     }
 }
