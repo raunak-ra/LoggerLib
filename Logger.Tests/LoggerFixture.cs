@@ -9,7 +9,7 @@ namespace Logger.Tests
         private readonly ITxsLogger logger = new TxsLogger();
 
         [Fact]
-        public void Logger_Should_Be_Write_Api_Logs_In_File()
+        public void Logger_Should_Write_Api_Logs_In_File()
         {
             var log = new ApiLog();
             log.ApplicationName = "apiName";
@@ -24,7 +24,7 @@ namespace Logger.Tests
         public string PropertyB { get; set; }
 
         [Fact]
-        public void Logger_Should_Be_Write_Additional_Logs_In_File()
+        public void Logger_Should_Write_Additional_Logs_In_File()
         {
 
             var log = new ApiLog();
@@ -41,7 +41,7 @@ namespace Logger.Tests
         }
 
         [Fact]
-        public void Logger_Should_Be_Write_Error_Logs_In_File()
+        public void Logger_Should_Write_Error_Logs_In_File()
         {
 
             var log = new ErrorLog();
@@ -56,7 +56,7 @@ namespace Logger.Tests
         }
 
         [Fact]
-        public void Logger_Should_Be_Write_Trace_Logs_In_File()
+        public void Logger_Should_Write_Trace_Logs_In_File()
         {
 
             var log = new TraceLog();
