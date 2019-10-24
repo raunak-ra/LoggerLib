@@ -7,7 +7,6 @@ namespace Logger
     public class ApiLog : LogBase
     {
         public override string Type { get => "api"; }
-
         public string Request { get; set; }
         public string Response { get; set; }
         public string Status { get; set; }

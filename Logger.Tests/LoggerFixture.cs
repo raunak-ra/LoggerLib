@@ -7,8 +7,6 @@ namespace Logger.Tests
     public class LoggerFixture
     {
         private readonly ITxsLogger logger = new TxsLogger();
-        public string PropertyA { get; set; }
-        public string PropertyB { get; set; }
 
         [Fact]
         public void Logger_Should_Be_Write_Api_Logs_In_File()
@@ -20,6 +18,10 @@ namespace Logger.Tests
             logger.WriteLogAsync(log);
             Assert.Equal(8, log.GetLogData().Count);
         }
+
+        // just for testing purposes 
+        public string PropertyA { get; set; }
+        public string PropertyB { get; set; }
 
         [Fact]
         public void Logger_Should_Be_Write_Additional_Logs_In_File()
